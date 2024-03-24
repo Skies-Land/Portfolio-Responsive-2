@@ -33,8 +33,14 @@ const linkAction = () =>{
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*=============== SHADOW HEADER ===============*/
-
+/*=============== CHANGE SHADOW HEADER ===============*/
+const shadowHeader = () => {
+    const header = document.getElementById('header')
+    // Ajoute ou supprime la classe 'shadow-header' à 'header' en fonction du défilement de la page.
+    this.scrollY >= 50 ? header.classList.add('shadow-header') 
+                       : header.classList.remove('shadow-header')
+}
+window.addEventListener('scroll', shadowHeader)
 
 /*=============== EMAIL JS ===============*/
 
