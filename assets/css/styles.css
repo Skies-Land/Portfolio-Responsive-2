@@ -211,6 +211,7 @@ img {
 
 .nav__toggle {
   font-size: 1.25rem;
+  border-radius: 1rem;
   cursor: pointer;
 }
 
@@ -339,6 +340,8 @@ img {
 
 .home__img {
   position: relative;
+  border-radius: .75rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
   z-index: 10;
 }
 
@@ -350,6 +353,7 @@ img {
   bottom: -0.75rem;
   right: -0.75rem;
   border: 4px solid var(--black-color);
+  border-radius: .75rem;
   z-index: 5;
   transition: background-color 0.4s;
 }
@@ -391,6 +395,7 @@ img {
 
 .home__social-link {
   background-color: var(--black-color-light);
+  border-radius: 1.5rem;
   color: var(--white-color);
   font-size: 1.25rem;
   padding: 6px;
@@ -434,6 +439,7 @@ img {
 .home__scroll-box {
   background-color: var(--black-color);
   color: var(--white-color);
+  border-radius: 1.5rem;
   width: 36px;
   height: 36px;
   display: grid;
@@ -479,6 +485,7 @@ img {
   padding: 1.1rem 1.5rem;
   color: var(--white-color);
   font-weight: var(--font-medium);
+  border-radius: .75rem;
   transition: background-color 0.4s;
 }
 
@@ -493,8 +500,9 @@ img {
 .button__ghost {
   border: 3px solid var(--black-color);
   color: var(--black-color);
-  padding: .5rem;
-  transition: border .4s, color .4s;
+  padding: 0.5rem;
+  border-radius: .70rem;
+  transition: border 0.4s, color 0.4s;
 }
 
 .button__ghost i {
@@ -529,12 +537,15 @@ img {
   position: relative;
   border: 4px solid var(--white-color);
   z-index: 1;
+  border-radius: .75rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
 }
 
 .about__shadow,
 .about__line,
 .about__box {
   position: absolute;
+  border-radius: .75rem;
 }
 
 .about__shadow {
@@ -617,10 +628,11 @@ img {
   height: 100%;
   background-color: var(--body-color);
   border: 4px solid var(--black-color);
+  border-radius: .75rem;
   padding: 6rem 1rem 3rem;
   z-index: 5;
   position: relative;
-  transition: background-color .4s, border .4s;
+  transition: background-color 0.4s, border 0.4s;
 }
 
 .services__border {
@@ -628,13 +640,14 @@ img {
   width: 100%;
   height: 100%;
   border: 4px solid var(--first-color);
+  border-radius: .75rem;
   top: 0;
   left: 0;
-  transition: transform .4s;
+  transition: transform 0.4s;
 }
 
 .services__card:hover .services__border {
-  transform: translate(.75rem, .75rem);
+  transform: translate(0.75rem, 0.75rem);
 }
 
 .services__icon {
@@ -664,6 +677,97 @@ img {
 }
 
 /*=============== PROJECTS ===============*/
+.projects {
+  background-color: var(--container-color);
+  transition: background-color 0.4s;
+}
+
+.projects__container {
+  row-gap: 2rem;
+}
+
+.projects__card {
+  padding: 1rem 1rem 2rem;
+  border-radius: .75rem;
+  transition: background-color 0.4s;
+}
+
+.projects__image {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.projects__img {
+  border-radius: .75rem;
+}
+
+.projects__button {
+  position: absolute;
+  right: 1rem;
+  bottom: -1.5rem;
+  padding: 1rem;
+}
+
+.projects__content {
+  margin-bottom: 1.25rem;
+}
+
+.projects__subtitle {
+  position: relative;
+  display: inline-block;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
+}
+
+.projects__subtitle::after {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background-color: var(--text-color);
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.projects__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.75rem;
+}
+
+.projects__buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.projects__link {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  transition: color 0.4s;
+}
+
+.projects__link i {
+  font-size: 1rem;
+  color: var(--title-color);
+  transition: color .4s;
+}
+
+.projects__link:hover,
+.projects__link:hover i {
+  color: var(--first-color);
+}
+.projects__card:hover {
+  background-color: var(--white-color);
+  border-radius: .75rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+}
 
 /*=============== CONTACT ===============*/
 
