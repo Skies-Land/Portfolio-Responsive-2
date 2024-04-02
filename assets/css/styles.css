@@ -318,6 +318,13 @@ img {
 }
 
 /* Active link */
+.active-link {
+  color: var(--first-color);
+}
+
+.active-link::after {
+  width: 25%;
+}
 
 /*=============== HOME ===============*/
 .home__container {
