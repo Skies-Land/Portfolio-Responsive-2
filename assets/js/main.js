@@ -74,7 +74,7 @@ const sendEmail = (e) => {
     */
     emailjs.sendForm('', '', '#contact-form', '')
         .then(() => {
-            // Show sent message
+            // Show success message
             contactMessage.textContent = 'Message sent successfully ✅'
 
             // Remove message after five seconds
@@ -82,18 +82,23 @@ const sendEmail = (e) => {
                 contactMessage.textContent = ''
             }, 5000)
 
-            // Clear input fields
+            // Clear input fields after sending the message
             contactForm.reset()
         }, () => {
             // Show error message
             contactMessage.textContent = 'Message not sent (service error) ❌'
         })
 }
-
 contactForm.addEventListener('submit', sendEmail)
 
 /*=============== SHOW SCROLL UP ===============*/ 
-
+const scrollUp = () => {
+    const scrollUp = document.getElementById('scroll-up')
+    // Ajoute ou supprime la classe 'show-scroll' à 'scrollUp' en fonction du défilement de la page.
+    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll') 
+                        : scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
