@@ -49,7 +49,7 @@ const contactForm = document.getElementById('contact-form'),
 const sendEmail = (e) => {
     e.preventDefault()
 
-    /** STEP TO CONNECT EMAILJS TO THE CONTACT FORM
+    /** ETAPE POUR CONNECTER EMAILJS AU FORMULAIRE DE CONTACT
     * 1. https://www.emailjs.com - Sign In our Sign Up
     * 2. "Email Services" => "Add New Service" => "Gmail" for example 
     * 3. "Connect Account" => "Create Service" => Copy the "Service ID"
@@ -74,18 +74,18 @@ const sendEmail = (e) => {
     */
     emailjs.sendForm('', '', '#contact-form', '')
         .then(() => {
-            // Show success message
+            // Affiche le message de réussite d'envoi du message
             contactMessage.textContent = 'Message sent successfully ✅'
 
-            // Remove message after five seconds
+            // Supprime le message après cinq secondes
             setTimeout(() => {
                 contactMessage.textContent = ''
             }, 5000)
 
-            // Clear input fields after sending the message
+            // Efface les champs de saisie après l'envoi du message
             contactForm.reset()
         }, () => {
-            // Show error message
+            // Affiche un message d'erreur d'envoi du message en cas de problème avec le service
             contactMessage.textContent = 'Message not sent (service error) ❌'
         })
 }
@@ -102,9 +102,15 @@ window.addEventListener('scroll', scrollUp)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
-    
+
+/** FONCTIONNEMENT SCROLL SECTIONS ACTIVE LINK
+ * Ajoute ou supprime la classe 'active-link' aux éléments de la barre de navigation en fonction de la position de défilement de la fenêtre.
+ * Lorsque la position de défilement de la fenêtre est entre le haut de la section et le bas de la section (hauteur de la section),
+ * la classe 'active-link' est ajoutée à l'élément de navigation correspondant.
+ * Sinon, la classe 'active-link' est supprimée.
+ */
 const scrollActive = () =>{
-  	const scrollDown = window.scrollY
+    const scrollDown = window.scrollY
 
 	sections.forEach(current =>{
 		const sectionHeight = current.offsetHeight,
@@ -122,6 +128,41 @@ const scrollActive = () =>{
 window.addEventListener('scroll', scrollActive)
 
 /*=============== DARK LIGHT THEME ===============*/ 
+// Récupère le bouton du thème à partir de l'ID 'theme-button' et les classes 'dark-theme' et 'ri-sun-line'
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'ri-sun-line'
 
+// Récupére le thème actuel et l'icône enregistrés dans le stockage local
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+/** getCurrentTheme :
+ * Obtient le thème actuel en vérifiant si le body du document contient la classe 'dark-theme'
+ * @returns {string} 'dark' si le body du document contient la classe 'dark-theme', sinon 'light'
+ */
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+/** getCurrentIcon :
+ * Obtient l'icône actuelle en vérifiant si le bouton de thème contient la classe 'ri-sun-line'
+ * @returns {string} 'ri-moon-line' si le bouton de thème contient la classe 'ri-sun-line', sinon 'ri-sun-line'
+ */
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
+
+// Si un thème a été sélectionné,
+if (selectedTheme) {
+    // ajoute ou supprime la classe 'dark-theme' du body du document et la classe 'ri-sun-line' du bouton de thème
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+}
+
+// Active / désactive le thème manuellement à l'aide du bouton
+themeButton.addEventListener('click', () => {
+    // Ajoute ou supprime  le thème sombre & l'iône
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+    // We save the theme and the current icon that the user chose
+    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-icon', getCurrentIcon())
+})
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
