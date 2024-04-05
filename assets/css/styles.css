@@ -1129,6 +1129,32 @@ body.dark-theme {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .home__image {
+    width: 180px;
+  }
+
+  .about__image {
+    width: 180px;
+  }
+
+  .about__shadow {
+    height: 330px;
+    right: -2.5rem;
+  }
+
+  .contact__data {
+    width: 100%;
+  }
+
+  .contact__data .section__title-2 {
+    transform: translateX(0);
+  }
+}
 
 /* For medium devices */
 
