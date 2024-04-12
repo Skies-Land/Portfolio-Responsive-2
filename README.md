@@ -18,4 +18,4 @@
 ##
 👨‍💻 Projet réalisé avec la vidéo tutoriel de [Bedimcode](https://youtu.be/-uQIBlaZ4P0?si=MW3j1aic8WsmunNF) sur Youtube
 
-▶ [Voir le projet : Portfolio Responsive #2]()
+▶ [Voir le projet : Portfolio Responsive #2](https://skies-land.github.io/Portfolio-Responsive-2/)
